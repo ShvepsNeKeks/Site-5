@@ -1,0 +1,146 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root{
+  --index: calc(1vh + 1vw);
+}
+
+@font-face {
+  font-family: ralewae_a;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: ralewae_b;
+  src: url(../fonts/raleway-black.woff2);
+  font-weight: 900;
+}
+
+body{
+  background-color: #000;
+  color: white;
+  font-family: ralewae_b, sans-serif;
+  /* line-height: 1.55; */
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Шапка */
+.header {
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  margin-top: calc(var(--index) * -8.5);
+  position: absolute;
+  z-index: 10;
+  min-width: 100%;
+  min-height: calc(var(--index) * 15);
+  background-image: url(../img/ground.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.layers__header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.layers__title {
+  z-index: 1;
+  padding-bottom: calc(var(--index) * 1.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0, calc(var(--scrollTop) / 2.8), 0);
+  letter-spacing: calc(var(--index) / 15);
+  font-size: calc(var(--index) * 1.3);
+  text-shadow:  0 0 15px #9d822b;
+  text-transform: uppercase;
+  color: #e7e7e0;
+  will-change: transform;
+}
+
+.layers__title::after {
+  content: 'Fairy forest';
+  font-size: calc(var(--index) * 3.2);
+}
+
+
+/* Слои */
+.layer {
+  z-index: 2;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.layers_base {
+  z-index: 0;
+  transform: translate3d(0, calc(var(--scrollTop) / 1.5), 0);
+}
+
+.layers_middle {
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+}
+
+.layers_front {
+  transform: translate3d(0, calc(var(--scrollTop) / 6.5), 0);
+}
+
+
+
+/* Контент внизу */
+.content {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: ;
+}
+
+.content__blok {
+  transform: translate3d(0, calc(var(--scrollTop) / 10), 0);
+  text-align: center;
+  will-change: transform;
+}
+
+.content__title {
+  margin-bottom: calc(var(--index));
+  font-size: calc(var(--index) * 2);
+  text-transform: uppercase;
+}
+
+.content__par {
+  margin-bottom: calc(var(--index) * 5);
+  max-width: calc(var(--index) * 20);
+  font-size: calc(var(--index) * .8);
+  font-family: ralewae_a, sans-serif;
+  opacity: 0.70;
+}
