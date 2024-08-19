@@ -94,6 +94,7 @@ h1, h2, p {
   background-size: cover;
   background-position: center;
   will-change: transform;
+  /* transition:  ease-in-out; */
 }
 
 .layers_base {
